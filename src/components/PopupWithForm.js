@@ -1,5 +1,5 @@
 
-function PopwithForm (props)  {
+function PopupWithForm (props)  {
   return (
     <div className={`popup popup_${props.name} ${props.isOpen ? "popup_opened" : ""}`}>
       <div className="popup__container">
@@ -19,4 +19,4 @@ function PopwithForm (props)  {
             <h2 className="popup__pic-caption"></h2>
           </div>
         </div>
-export default PopwithForm 
+export default PopupWithForm 
