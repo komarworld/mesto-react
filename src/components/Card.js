@@ -7,8 +7,7 @@ function Card(props) {
   }
 
   return (
-    <template className="template-cards">
-        <li className="cards__item">
+      <li className="cards__item">
           <button className="cards__item-delete" type="button"></button>
           <img className="cards__item-image" src={props.card.link} alt={props.card.name} onClick={handleClick} />
           <div className="cards__item-info">
@@ -18,8 +17,7 @@ function Card(props) {
               <p className="cards__item-like-sum">{props.card.likes.length}</p>
             </div>
           </div>
-        </li>
-    </template>
+      </li>
   )
 }
 
