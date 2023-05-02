@@ -8,7 +8,7 @@ function PopupWithForm ({
   onClose
 })  {
   return (
-    <div className={`popup popup_${.name} ${isOpen ? "popup_opened" : ""}`}>
+    <div className={`popup popup_${name} ${isOpen ? "popup_opened" : ""}`}>
       <div className="popup__container">
           <button className="popup__close-btn" type="button" aria-label="Закрыть" onClick={onClose}></button>
           <h2 className="popup__heading">{title}</h2>

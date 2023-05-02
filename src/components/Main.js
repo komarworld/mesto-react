@@ -8,10 +8,6 @@ function Main ({
   onEditProfile,
   onAddPlace,
   onCardClick,
-  userAvatar,
-  userName,
-  userDescription,
-  cards
 }) {
 const [userName, setUserName] = React.useState('')
 const [userDescription, setUserDescription] = React.useState('')
