@@ -3,7 +3,16 @@ import api from '../utils/Api'
 import Card from './Card'
 
 
-function Main (props) {
+function Main ({
+  onEditAvatar,
+  onEditProfile,
+  onAddPlace,
+  onCardClick,
+  userAvatar,
+  userName,
+  userDescription,
+  cards
+}) {
 const [userName, setUserName] = React.useState('')
 const [userDescription, setUserDescription] = React.useState('')
 const [userAvatar, setUserAvatar]= React.useState('')
@@ -32,23 +41,23 @@ const [cards, setCards] = React.useState([]);
   return (
     <main>
       <section className="profile">
-        <div className="profile__avatar-wrap" onClick={props.onEditAvatar}>
+        <div className="profile__avatar-wrap" onClick={onEditAvatar}>
               <img className="profile__avatar" src={userAvatar} alt="Аватарка" />
         </div>
         <div className="profile__info">
           <div className="profile__info-container">
             <h1 className="profile__info-title">{userName}</h1>
-            <button className="profile__edit-button" type="button" aria-label="Редактировать" onClick={props.onEditProfile}></button>
+            <button className="profile__edit-button" type="button" aria-label="Редактировать" onClick={onEditProfile}></button>
           </div>
           <p className="profile__info-subtitle">{userDescription}</p>
         </div>
-        <button className="profile__add-button" type="button" aria-label="Добавить" onClick={props.onAddPlace}></button>
+        <button className="profile__add-button" type="button" aria-label="Добавить" onClick={onAddPlace}></button>
       </section>
 
       <section className="cards" aria-label="Секция с картинками">
         <ul className="cards__list">
         {cards.map((card) => (
-          <Card card={card} key={card._id} onCardClick={props.onCardClick} />
+          <Card card={card} key={card._id} onCardClick={onCardClick} />
         ))}
         </ul>
       </section>
