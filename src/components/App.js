@@ -9,10 +9,7 @@ function App() {
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState(false);
-  const [isImagePopupOpen, setIsImagePopupOpen] = useState(false);
-  const [selectedCard, setSelectedCard] = useState({});
-
-
+  const [selectedCard, setSelectedCard] = useState(null);
 
   function handleEditAvatarClick() {
     setIsEditAvatarPopupOpen(true);
@@ -22,20 +19,19 @@ function App() {
   }
   function handleAddPlaceClick() {
     setIsAddPlacePopupOpen(true);
+    
   }
   function handleCardClick (card) {
     setSelectedCard(card);
-    setIsImagePopupOpen(true);
+   
   };
 
   const closeAllPopups = () => {
     setIsEditProfilePopupOpen(false);
     setIsAddPlacePopupOpen(false);
     setIsEditAvatarPopupOpen(false);
-    setIsImagePopupOpen (false)
-    setSelectedCard({})
+    setSelectedCard(null)
   };
-
 
   return (
       <div className="body">
@@ -48,7 +44,7 @@ function App() {
 
         />
         <Footer />
-        
+
         <PopupWithForm
           name="profile"
           title="Редактировать&nbsp;профиль"
@@ -103,7 +99,6 @@ function App() {
               required/>
             <span className="popup__input-error form-link-error" ></span>
         </PopupWithForm>
- 
       
         <PopupWithForm
           name="delete"
@@ -133,7 +128,7 @@ function App() {
           name="image"
           onClose={closeAllPopups}
           card = {selectedCard}
-          isOpen = {isImagePopupOpen}
+         
         />
 
       </div>
