@@ -2,7 +2,6 @@ import React from 'react';
 import Card from './Card'
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
 
-
 function Main ({
   onEditAvatar,
   onEditProfile,
@@ -15,7 +14,6 @@ function Main ({
 
 const currentUser = React.useContext(CurrentUserContext)
 
-   
   return (
     <main>
       <section className="profile">

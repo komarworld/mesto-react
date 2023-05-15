@@ -1,11 +1,9 @@
 import React from "react";
 import PopupWithForm from "./PopupWithForm";
 
-
 function AddPlacePopup ({isOpen, onClose, onAddPlace, buttonText}) {
-
-  const [cardName, setСardName] = React.useState()
-  const [cardLink, setСardLink] = React.useState()
+  const [cardName, setСardName] = React.useState('')
+  const [cardLink, setСardLink] = React.useState('')
 
   React.useEffect(() => {
     setСardName("");

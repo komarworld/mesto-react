@@ -11,9 +11,7 @@ import api from '../utils/Api'
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
 
 function App() {
-
   const [currentUser, setCurrentUser] = useState({});
-
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState(false);
@@ -21,7 +19,6 @@ function App() {
   const [selectedCard, setSelectedCard] = useState(null);
   const [cards, setCards] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-
   
   function handleEditAvatarClick() {
     setIsEditAvatarPopupOpen(true);
@@ -57,7 +54,6 @@ function App() {
           console.log(err.message))
         },[])
 
-
   function closeAllPopups() {
     setIsEditProfilePopupOpen(false);
     setIsAddPlacePopupOpen(false);
@@ -65,7 +61,6 @@ function App() {
     setSelectedCard(null);
     setSelectedDeleteCard(null)
   }
-    
    
   function handleCardLike(card) {
     // проверяем, есть ли уже лайк на этой карточке
@@ -153,43 +148,36 @@ function App() {
             onCardDelete ={handleDeleteCardClick}
             cards={cards}
           />
-
           <Footer />
-
           <EditProfilePopup 
             isOpen={isEditProfilePopupOpen}
             onClose={closeAllPopups}
             onUpdateUser={handleUpdateUser}
             buttonText = {isLoading ? 'Сохранение...' : 'Сохранить'}
           /> 
-
           <AddPlacePopup
             isOpen= {isAddPlacePopupOpen}
             onClose={closeAllPopups}
             onAddPlace={handleAddPlaceSubmit}
             buttonText = {isLoading ? 'Сохранение...' : 'Сохранить'}
-          />
-        
+          />       
           <EditAvatarPopup
             isOpen={isEditAvatarPopupOpen}
             onClose={closeAllPopups}
             onUpdateAvatar={handleUpdateAvatar}
             buttonText = {isLoading ? 'Сохранение...' : 'Сохранить'}
           />
-
           <DeleteCardPopup
             onDeleteCard ={handleCardDeleteConfirm}
             isOpen= {selectedDeleteCard}
             onClose={closeAllPopups}
             buttonText = {isLoading ? 'Удаление...' : 'Да'}
           />
-
           <ImagePopup 
             name="image"
             onClose={closeAllPopups}
             card = {selectedCard}
           />
-
       </div>
     </CurrentUserContext.Provider>
   );

@@ -17,15 +17,12 @@ function Card({card, onCardClick, onCardLike, onCardDelete }) {
   function handleCardClick() {  
    onCardClick(card);
   }
-
   function handleLikeClick () {
     onCardLike(card)
   }
-
   function handleDeleteClick() {
     onCardDelete(card);
   }
-
   return (
       <li className="cards__item">
         {isOwn && (<button className="cards__item-delete" type="button" onClick={handleDeleteClick} />)} 
